@@ -1,0 +1,22 @@
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    restart: always
+    user: root
+    network_mode: host
+    volumes:
+      - /home/docker/grafana/data:/var/lib/grafana
+      - /home/docker/grafana/panels:/etc/dashboards
+      - /home/docker/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - /home/docker/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    hostname: prometheus
+    restart: always
+    user: root
+    network_mode: host
+    volumes:
+      - /home/docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
