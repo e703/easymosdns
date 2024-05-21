@@ -1,6 +1,8 @@
 #!/bin/bash
 #系统docker环境部署
 #导入 Docker APT 存储库 GPG 密钥
+apt install gpg -y
+
 curl  -fsSL  https://download.docker.com/linux/ubuntu/gpg| sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
 
 #将存储库添加到 Apt 源：
