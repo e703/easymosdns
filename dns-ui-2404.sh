@@ -1,4 +1,12 @@
 #!/bin/bash
+#系统docker环境部署
+#导入 Docker APT 存储库 GPG 密钥
+curl  -fsSL  https://download.docker.com/linux/ubuntu/gpg| sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
+
+#将存储库添加到 Apt 源：
+echo "deb https://download.docker.com/linux/ubuntu  noble stable" | sudo tee /etc/apt/sources.list.d/docker.list
+
+#更新系统中的存储库列表以确认其正常工作
 # 软件库升级
 apt update
 echo "软件库升级完成"
