@@ -1,0 +1,411 @@
+http:
+  pprof:
+    port: 6060
+    enabled: false
+  address: 0.0.0.0:3444
+  session_ttl: 720h
+users:
+  - name: alan
+    password: $2y$10$1I2QJKo1/T6GHTeNb7pbdO8huzQVcj3eZtSvuPeE9B8zjJBoJD/Oy
+auth_attempts: 5
+block_auth_min: 15
+http_proxy: ""
+language: zh-cn
+theme: auto
+dns:
+  bind_hosts:
+    - 0.0.0.0
+  port: 53
+  anonymize_client_ip: false
+  ratelimit: 0
+  ratelimit_subnet_len_ipv4: 24
+  ratelimit_subnet_len_ipv6: 56
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+    - 127.0.0.1:6553
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - 127.0.0.1:6553
+  fallback_dns: []
+  upstream_mode: fastest_addr
+  fastest_timeout: 1s
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts:
+    - version.bind
+    - id.server
+    - hostname.bind
+  trusted_proxies:
+    - 127.0.0.0/8
+    - ::1/128
+  cache_size: 0
+  cache_ttl_min: 0
+  cache_ttl_max: 0
+  cache_optimistic: false
+  bogus_nxdomain: []
+  aaaa_disabled: true
+  enable_dnssec: false
+  edns_client_subnet:
+    custom_ip: ""
+    enabled: false
+    use_custom: false
+  max_goroutines: 50
+  handle_ddr: true
+  ipset: []
+  ipset_file: ""
+  bootstrap_prefer_ipv6: false
+  upstream_timeout: 10s
+  private_networks: []
+  use_private_ptr_resolvers: true
+  local_ptr_upstreams: []
+  use_dns64: false
+  dns64_prefixes: []
+  serve_http3: false
+  use_http3_upstreams: false
+  serve_plain_dns: true
+  hostsfile_enabled: true
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  port_dns_over_quic: 784
+  port_dnscrypt: 0
+  dnscrypt_config_file: ""
+  allow_unencrypted_doh: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+  strict_sni_check: false
+querylog:
+  dir_path: ""
+  ignored:
+    - keepalive.softether.org
+  interval: 6h
+  size_memory: 1000
+  enabled: true
+  file_enabled: true
+statistics:
+  dir_path: ""
+  ignored:
+    - keepalive.softether.org
+  interval: 24h
+  enabled: true
+filters:
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+    name: EasyList China
+    id: 1585622330
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
+    name: EasyPrivacy
+    id: 1585622331
+  - enabled: true
+    url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+    name: CJX's Annoyance List
+    id: 1585622332
+  - enabled: true
+    url: https://www.i-dont-care-about-cookies.eu/abp/
+    name: I don't care about cookies
+    id: 1585622335
+  - enabled: true
+    url: https://fastly.jsdelivr.net/gh/xinggsf/Adblock-Plus-Rule@master/rule.txt
+    name: 乘风规则
+    id: 1585623201
+  - enabled: true
+    url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt
+    name: CJX's uBlock list
+    id: 1591387257
+  - enabled: true
+    url: https://anti-ad.net/adguard.txt
+    name: anti-AD
+    id: 1609084765
+  - enabled: true
+    url: https://raw.githubusercontent.com/Goooler/1024_hosts/master/hosts
+    name: （1024网站和澳门皇家赌场）
+    id: 1641628675
+  - enabled: true
+    url: https://fastly.jsdelivr.net/gh/xinggsf/Adblock-Plus-Rule@master/mv.txt
+    name: 乘风视频规则
+    id: 1641628676
+  - enabled: true
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    name: AdGuard DNS filter
+    id: 1228750870
+  - enabled: true
+    url: http://sub.adtchrome.com/adt-chinalist-easylist.txt
+    name: 广告终结者使用的拦截规则，基于ChinaList+EasyList修正维护
+    id: 139789181
+  - enabled: true
+    url: https://easylist-downloads.adblockplus.org/easylist.txt
+    name: EasyList-去除国际网页中大多数广告，包括不需要的框架、图像和对象
+    id: 139789112
+  - enabled: true
+    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt
+    name: ADgk去广告easylistchina补充规则
+    id: 139789131
+  - enabled: true
+    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+    name: ADgk百度广告过滤
+    id: 139789133
+whitelist_filters: []
+user_rules:
+  - '@@mp4.ts'
+  - '##---====GCP'
+  - '##----End'
+  - 172.16.0.23  nas.1280.ml
+  - '##---===For Xiaomi AD===------'
+  - 127.0.0.1    79t2.admaster.com.cn
+  - 127.0.0.1    ad.doubleclick.net
+  - 127.0.0.1    ad.mi.com
+  - 127.0.0.1    ad.xiaomi.com
+  - 127.0.0.1    ad1.xiaomi.com
+  - 127.0.0.1    adv.sec.miui.com
+  - 127.0.0.1    alert.kuyun.com
+  - 127.0.0.1    alog.umeng.com
+  - 127.0.0.1    api.ad.xiaomi.com
+  - 127.0.0.1    api.cupid.ptqy.gitv.tv
+  - 127.0.0.1    assistant.pandora.xiaomi.com
+  - 127.0.0.1    auth.api.gitv.tv
+  - 127.0.0.1    b.netcheck.gallery.pandora.xiaomi.com
+  - 127.0.0.1    bss.pandora.xiaomi.com
+  - 127.0.0.1    bss.pandora.xiaomi.com
+  - 127.0.0.1    bss.pandora.xiaomi.com
+  - 127.0.0.1    cdn.ad.xiaomi.com
+  - 127.0.0.1    config.kuyun.com
+  - 127.0.0.1    data.mistat.xiaomi.com
+  - 127.0.0.1    de.pandora.xiaomi.com
+  - 127.0.0.1    dvb.pandora.xiaomi.com
+  - 127.0.0.1    e.ad.xiaomi.com
+  - 127.0.0.1    f1.market.xiaomi.com
+  - 127.0.0.1    f2.market.xiaomi.com
+  - 127.0.0.1    f3.market.xiaomi.com
+  - 127.0.0.1    f4.market.xiaomi.com
+  - 127.0.0.1    f5.market.xiaomi.com
+  - 127.0.0.1    g.dtv.cn.miaozhan.com
+  - 127.0.0.1    gallery.pandora.xiaomi.com
+  - 127.0.0.1    gvod.aiseejapp.atianqi.com
+  - 127.0.0.1    jellyfish.pandora.xiaomi.com
+  - 127.0.0.1    logonext.tv.kuyun.com
+  - 127.0.0.1    misc.in.duokanbox.com
+  - 127.0.0.1    misc.pandora.xiaomi.com
+  - 127.0.0.1    mishop.pandora.xiaomi.com
+  - 127.0.0.1    mitv.tracking.miui.com
+  - 127.0.0.1    new.api.ad.xiaomi.com
+  - 127.0.0.1    o2o.api.xiaomi.com
+  - 127.0.0.1    o2o.api.xiaomi.com
+  - 127.0.0.1    omgmta.play.aiseet.atianqi.com
+  - 127.0.0.1    pandora.mi.com
+  - 127.0.0.1    sdkconfig.ad.xiaomi.com
+  - 127.0.0.1    secure-chn.imrworldwide.com
+  - 127.0.0.1    ssp.ad.xiaomi.com
+  - 127.0.0.1    staging.ai.api.xiaomi.com
+  - 127.0.0.1    starfish.pandora.xiaomi.com
+  - 127.0.0.1    stat.pandora.xiaomi.com
+  - 127.0.0.1    t1.a.market.xiaomi.com
+  - 127.0.0.1    t2.a.market.xiaomi.com
+  - 127.0.0.1    t3.a.market.xiaomi.com
+  - 127.0.0.1    t4.a.market.xiaomi.com
+  - 127.0.0.1    t5.a.market.xiaomi.com
+  - 127.0.0.1    test.ad.xiaomi.com
+  - 127.0.0.1    test.new.api.ad.xiaomi.com
+  - 127.0.0.1    tracking.miui.com
+  - 127.0.0.1    tv.aiseet.atianqi.com
+  - 127.0.0.1    tv.weixin.pandora.xiaomi.com
+  - 127.0.0.1    tvapi.kuyun.com
+  - 127.0.0.1    upgrade.mishop.pandora.xiaomi.com
+  - 127.0.0.1    v.admaster.com.cn
+  - 127.0.0.1    vv.play.aiseet.atianqi.com
+  - '##-----====End====-------'
+  - '@@||nas.1280.ml^$important'
+  - '@@||music.163.com^$important'
+  - '@@||kuwo.cn^$important'
+  - '@@||web.push.126.net^$important'
+  - '@@||pcr.da.netease.com^$important'
+  - '@@||www.kanjiantu.com^$client=''127.0.0.1'''
+  - '@@||www.supportxmr.com^$client=''127.0.0.1'''
+  - '@@||o1098464.ingest.sentry.io^$client=''172.17.0.2'''
+  - '||m.jingxi.com^$client=''172.17.0.2'''
+  - '@@||m.jingxi.com^$important'
+  - '@@||tracker.ai.xiaomi.com^$important'
+  - '@@||aidevice.cn-hangzhou.log.aliyuncs.com^$important'
+  - '@@||mobile.pipe.aria.microsoft.com^$client=''172.16.0.*'''
+  - '@@||browser.pipe.aria.microsoft.com^$client=''172.16.0.*'''
+  - '@@||mobile.pipe.aria.microsoft.com^$client=''172.16.0.*'''
+  - '@@||browser.events.data.microsoft.com^$client=''172.16.0.*'''
+  - '@@||chaturbate.com^$client=''172.16.0.87'''
+  - '||193dy.com^$important'
+  - '@@||mcs.snssdk.com^$client=''172.16.1.51'''
+  - '@@||oneapm.com^'
+  - '@@||chaturbate.com^$client=''172.16.0.1'''
+  - ""
+dhcp:
+  enabled: false
+  interface_name: ""
+  local_domain_name: lan
+  dhcpv4:
+    gateway_ip: ""
+    subnet_mask: ""
+    range_start: ""
+    range_end: ""
+    lease_duration: 86400
+    icmp_timeout_msec: 1000
+    options: []
+  dhcpv6:
+    range_start: ""
+    lease_duration: 86400
+    ra_slaac_only: false
+    ra_allow_slaac: false
+filtering:
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_services:
+    schedule:
+      time_zone: Local
+    ids: []
+  protection_disabled_until: null
+  safe_search:
+    enabled: false
+    bing: true
+    duckduckgo: true
+    google: true
+    pixabay: true
+    yandex: true
+    youtube: true
+  blocking_mode: default
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  rewrites:
+    - domain: timeserver.cnzz.net
+      answer: 172.16.0.1
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  filters_update_interval: 12
+  blocked_response_ttl: 60
+  filtering_enabled: true
+  parental_enabled: false
+  safebrowsing_enabled: false
+  protection_enabled: true
+clients:
+  runtime_sources:
+    whois: true
+    arp: true
+    rdns: true
+    dhcp: true
+    hosts: true
+  persistent:
+    - safe_search:
+        enabled: false
+        bing: false
+        duckduckgo: false
+        google: false
+        pixabay: false
+        yandex: false
+        youtube: false
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: WKY-Drivers
+      ids:
+        - 172.16.0.14
+        - 172.16.0.15
+        - 172.16.1.11
+        - 172.16.1.12
+        - 172.16.1.13
+        - 172.16.1.14
+        - 00:22:6d:4b:b6:c3
+        - b0:d5:9d:e2:f7:28
+        - c0:e7:3e:56:ec:cc
+        - c0:e7:3e:6a:4a:92
+        - c0:e7:3e:be:d6:b0
+        - c0:e7:3e:e2:f1:09
+      tags:
+        - device_other
+      upstreams: []
+      uid: 018e16d0-c02b-7695-bfcc-09b20a7327b6
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: true
+      ignore_querylog: false
+      ignore_statistics: false
+    - safe_search:
+        enabled: false
+        bing: true
+        duckduckgo: true
+        google: true
+        pixabay: true
+        yandex: true
+        youtube: true
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: YanJiao-DNS-01
+      ids:
+        - 172.16.1.5
+        - 2c:55:d3:b0:bd:da
+      tags:
+        - os_linux
+      upstreams: []
+      uid: 018e16d0-c02b-76dc-a6a9-05b8fc535a59
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: true
+      ignore_querylog: true
+      ignore_statistics: true
+    - safe_search:
+        enabled: false
+        bing: false
+        duckduckgo: false
+        google: false
+        pixabay: false
+        yandex: false
+        youtube: false
+      blocked_services:
+        schedule:
+          time_zone: Local
+        ids: []
+      name: nina-Iphones
+      ids:
+        - 172.16.0.210
+        - 172.16.0.211
+      tags:
+        - device_phone
+      upstreams: []
+      uid: 018e16d0-c02b-7700-8110-1ebfff8c6132
+      upstreams_cache_size: 0
+      upstreams_cache_enabled: false
+      use_global_settings: false
+      filtering_enabled: false
+      parental_enabled: false
+      safebrowsing_enabled: false
+      use_global_blocked_services: true
+      ignore_querylog: false
+      ignore_statistics: false
+log:
+  file: ""
+  max_backups: 0
+  max_size: 100
+  max_age: 3
+  compress: false
+  local_time: false
+  verbose: false
+os:
+  group: ""
+  user: ""
+  rlimit_nofile: 0
+schema_version: 28
